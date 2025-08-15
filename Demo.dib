@@ -1,0 +1,94 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"name":"csharp","languageName":"csharp"},{"name":"fsharp","languageName":"F#","aliases":["f#","fs"]},{"name":"html","languageName":"HTML"},{"name":"http","languageName":"HTTP"},{"name":"javascript","languageName":"JavaScript","aliases":["js"]},{"name":"mermaid","languageName":"Mermaid"},{"name":"pwsh","languageName":"PowerShell","aliases":["powershell"]},{"name":"value"}]}}
+
+#!csharp
+
+Console.WriteLine("Hello, Polyglot Notebook!");
+var foo = new{Bar="Hello, Polyglot Notebook!", Baz = 42};
+foo.Display()
+
+#!markdown
+
+# This should print 
+_(a console output)_
+```
+Hello, Polyglot Notebook! 
+```
+
+#!markdown
+
+sdfsdf
+
+#!csharp
+
+#!time
+var displayRef =  "initial value".Display(); 
+System.Threading.Thread.Sleep(10000); 
+displayRef.Update("different value");
+
+#!csharp
+
+Console.WriteLine(foo);
+foo.Display()
+
+#!markdown
+
+```mermaid
+sequenceDiagram
+    CheckoutService ->> CardService: Charge(card)
+    CardService -->> CheckoutService: OK, payment cleared
+    CheckoutService -) ShippingService: Ship(cart)
+    ShippingService -->> CheckoutService: OK, "shipping cart content"
+```
+
+#!markdown
+
+```mermaid
+
+#!csharp
+
+#r "nuget: Spectre.Console"
+
+Spectre.Console.AnsiConsole.MarkupLine("[green]Hello from Spectre.Console![/]");
+
+#!csharp
+
+list = new []
+{ 
+    new {Foo = "Bar", Baz = 42},
+    new {Foo = "Bar", Baz = 43},
+    new {Foo = "Bar", Baz = 44},
+};
+
+
+list.Display("text/plain");
+list.Display("application/json");
+list.DisplayTable();
+list
+
+#!csharp
+
+using System.IO;
+using Microsoft.DotNet.Interactive.Formatting;
+
+Formatter.ListExpansionLimit = 2;
+
+var files = new DirectoryInfo("c:\\temp").GetFiles("*", SearchOption.AllDirectories).Reverse();
+files
+
+#!value
+
+#!csharp
+var hi = "hi";
+
+#!html
+<div id="output" style="color: red; background-color: yellow; display: inline;">hello</div>
+
+#!javascript
+#!set --value @csharp:hi --name hiFromCSharp    
+
+( () => {
+    let output = document.getElementById("output");
+    output.innerHTML =  hiFromCSharp;
+})();
